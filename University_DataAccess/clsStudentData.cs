@@ -2,6 +2,7 @@
 using System.Configuration;
 using MySql.Data.MySqlClient;
 using BCrypt.Net;
+using System.Runtime.InteropServices;
 
 namespace University_DataAccess
 {
@@ -47,14 +48,37 @@ namespace University_DataAccess
         }
 
 
-        public static bool UpdateStudent(string name, int studentNumber,string placeOFBirth, string major)
+        public static bool UpdateStudent(string name, int studentNumber,string placeOfBirth, string major)
         {
             bool isUpdated = false;
-
+            string query = "update stduent set name= @Name, student_number =@studentNumber, place_of_birth = @placeOfbirthday, major = @major where student_number = studentNumber";
             using (MySqlConnection conn = new MySqlConnection(cs))
             {
+                try
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", name);
+                        cmd.Parameters.AddWithValue("@StudentNumber", studentNumber);
+                        cmd.Parameters.AddWithValue("@placeOfBirth", placeOfBirth);
+                        cmd.Parameters.AddWithValue("@major", major);
+                        int efectedRow = cmd.ExecuteNonQuery();
+                        isUpdated = efectedRow > 0;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+                return isUpdated;
 
             }
         }
+
+
+
+
     }
 }

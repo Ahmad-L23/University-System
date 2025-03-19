@@ -1,0 +1,9 @@
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\bin\Debug\Universt_System.exe.config
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\bin\Debug\Universt_System.exe
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\bin\Debug\Universt_System.pdb
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.csproj.AssemblyReference.cache
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.Properties.Resources.resources
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.csproj.GenerateResource.cache
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.csproj.CoreCompileInputs.cache
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.exe
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.pdb
