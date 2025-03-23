@@ -30,18 +30,18 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.Add = new System.Windows.Forms.Button();
+            this.Addbtn = new System.Windows.Forms.Button();
             this.majorTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.programTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.emailTxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Cities = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -64,19 +64,20 @@
             this.label8.TabIndex = 31;
             this.label8.Text = "Add New Student";
             // 
-            // Add
+            // Addbtn
             // 
-            this.Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Add.Location = new System.Drawing.Point(156, 313);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(104, 35);
-            this.Add.TabIndex = 30;
-            this.Add.Text = "Add";
-            this.Add.UseVisualStyleBackColor = false;
+            this.Addbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Addbtn.Location = new System.Drawing.Point(156, 313);
+            this.Addbtn.Name = "Addbtn";
+            this.Addbtn.Size = new System.Drawing.Size(104, 35);
+            this.Addbtn.TabIndex = 30;
+            this.Addbtn.Text = "Add";
+            this.Addbtn.UseVisualStyleBackColor = false;
+            this.Addbtn.Click += new System.EventHandler(this.Addbtn_Click);
             // 
             // majorTxt
             // 
-            this.majorTxt.Location = new System.Drawing.Point(528, 128);
+            this.majorTxt.Location = new System.Drawing.Point(151, 94);
             this.majorTxt.Margin = new System.Windows.Forms.Padding(500);
             this.majorTxt.Multiline = true;
             this.majorTxt.Name = "majorTxt";
@@ -87,36 +88,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(389, 131);
+            this.label5.Location = new System.Drawing.Point(15, 94);
             this.label5.Margin = new System.Windows.Forms.Padding(500);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 26;
             this.label5.Text = "Major";
             // 
-            // programTxt
-            // 
-            this.programTxt.Location = new System.Drawing.Point(528, 89);
-            this.programTxt.Margin = new System.Windows.Forms.Padding(500);
-            this.programTxt.Multiline = true;
-            this.programTxt.Name = "programTxt";
-            this.programTxt.Size = new System.Drawing.Size(180, 30);
-            this.programTxt.TabIndex = 25;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(389, 92);
-            this.label4.Margin = new System.Windows.Forms.Padding(500);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(132, 20);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "Place Of Birth";
-            // 
             // passwordTxt
             // 
-            this.passwordTxt.Location = new System.Drawing.Point(151, 162);
+            this.passwordTxt.Location = new System.Drawing.Point(151, 55);
             this.passwordTxt.Margin = new System.Windows.Forms.Padding(500);
             this.passwordTxt.Multiline = true;
             this.passwordTxt.Name = "passwordTxt";
@@ -127,36 +108,16 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 165);
+            this.label3.Location = new System.Drawing.Point(15, 58);
             this.label3.Margin = new System.Windows.Forms.Padding(500);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "Password";
             // 
-            // emailTxt
-            // 
-            this.emailTxt.Location = new System.Drawing.Point(151, 122);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(500);
-            this.emailTxt.Multiline = true;
-            this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(180, 30);
-            this.emailTxt.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 126);
-            this.label1.Margin = new System.Windows.Forms.Padding(500);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 20);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Student ID";
-            // 
             // nameTxt
             // 
-            this.nameTxt.Location = new System.Drawing.Point(151, 83);
+            this.nameTxt.Location = new System.Drawing.Point(151, 15);
             this.nameTxt.Margin = new System.Windows.Forms.Padding(500);
             this.nameTxt.Multiline = true;
             this.nameTxt.Name = "nameTxt";
@@ -167,12 +128,56 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 87);
+            this.label2.Location = new System.Drawing.Point(15, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(500);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 20);
             this.label2.TabIndex = 18;
             this.label2.Text = "Student Name";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel1.Controls.Add(this.Cities);
+            this.panel1.Controls.Add(this.passwordTxt);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.nameTxt);
+            this.panel1.Controls.Add(this.majorTxt);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(23, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(765, 150);
+            this.panel1.TabIndex = 33;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(389, 24);
+            this.label4.Margin = new System.Windows.Forms.Padding(500);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 20);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "Place Of Birth";
+            // 
+            // Cities
+            // 
+            this.Cities.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.Cities.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.Cities.FormattingEnabled = true;
+            this.Cities.Items.AddRange(new object[] {
+            "Irbid",
+            "Amman",
+            "Jerash",
+            "Ajlon",
+            "Al\'aqba"});
+            this.Cities.Location = new System.Drawing.Point(550, 24);
+            this.Cities.Name = "Cities";
+            this.Cities.Size = new System.Drawing.Size(129, 21);
+            this.Cities.TabIndex = 28;
             // 
             // frmAddStudent
             // 
@@ -182,20 +187,15 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.Add);
-            this.Controls.Add(this.majorTxt);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.programTxt);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.passwordTxt);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.emailTxt);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.nameTxt);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Addbtn);
+            this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "frmAddStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add new Student";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,16 +205,15 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button Addbtn;
         private System.Windows.Forms.TextBox majorTxt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox programTxt;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox emailTxt;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox Cities;
+        private System.Windows.Forms.Label label4;
     }
 }

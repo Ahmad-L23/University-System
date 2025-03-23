@@ -2,21 +2,21 @@
 using System.Configuration;
 using MySql.Data.MySqlClient;
 using BCrypt.Net;
-using System.Runtime.InteropServices;
 
 namespace University_DataAccess
 {
     public class clsStudentData
     {
-        private static string cs = ConfigurationManager.ConnectionStrings["UniversityDB"].ConnectionString;
+        private static string cs = clsDataAccessSettings.ConnectionString;
 
-        public static int AddNewStudent(string name, int studentNumber, string password, string placeOfBirth, string major)
+
+        public static string AddNewStudent(string name, string password, string placeOfBirth, string major)
         {
-            int studentID = -1;
+            string studentNumber = GenerateUniqueStudentNumber();
             string hashedPassword = HashPassword(password);
 
-            string query = "INSERT INTO Student (name, student_number, password, place_of_birth, major) " +
-                           "VALUES (@Name, @StudentNumber, @Password, @PlaceOfBirth, @Major); SELECT LAST_INSERT_ID();";
+            string query = "INSERT INTO student (name, student_number, password, place_of_birth, major) " +
+                           "VALUES (@Name, @StudentNumber, @Password, @PlaceOfBirth, @Major);";
 
             using (MySqlConnection conn = new MySqlConnection(cs))
             {
@@ -31,7 +31,11 @@ namespace University_DataAccess
                         cmd.Parameters.AddWithValue("@PlaceOfBirth", placeOfBirth);
                         cmd.Parameters.AddWithValue("@Major", major);
 
-                        studentID = Convert.ToInt32(cmd.ExecuteScalar());
+                        int affectedRows = cmd.ExecuteNonQuery();
+                        if (affectedRows > 0)
+                        {
+                            return studentNumber;
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -39,19 +43,42 @@ namespace University_DataAccess
                     Console.WriteLine("Error: " + ex.Message);
                 }
             }
-            return studentID;
+            return null;
         }
 
-        private static string HashPassword(string password)
+        private static string GenerateUniqueStudentNumber()
         {
-            return BCrypt.Net.BCrypt.HashPassword(password);
+            string studentNumber;
+            Random rnd = new Random();
+
+            using (MySqlConnection conn = new MySqlConnection(cs))
+            {
+                conn.Open();
+
+                do
+                {
+                    int randomDigits = rnd.Next(100000, 999999);
+                    studentNumber = "3211" + randomDigits.ToString();
+
+                    string query = "SELECT COUNT(*) FROM Student WHERE student_number = @StudentNumber";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@StudentNumber", studentNumber);
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count == 0) break;
+                    }
+                } while (true);
+            }
+
+            return studentNumber;
         }
 
-
-        public static bool UpdateStudent(string name, int studentNumber,string placeOfBirth, string major)
+        public static bool UpdateStudent(string name, int studentNumber, string placeOfBirth, string major)
         {
             bool isUpdated = false;
-            string query = "update stduent set name= @Name, student_number =@studentNumber, place_of_birth = @placeOfbirthday, major = @major where student_number = studentNumber";
+            string query = "UPDATE Student SET name = @Name, place_of_birth = @PlaceOfBirth, major = @Major WHERE student_number = @StudentNumber";
+
             using (MySqlConnection conn = new MySqlConnection(cs))
             {
                 try
@@ -61,24 +88,24 @@ namespace University_DataAccess
                     {
                         cmd.Parameters.AddWithValue("@Name", name);
                         cmd.Parameters.AddWithValue("@StudentNumber", studentNumber);
-                        cmd.Parameters.AddWithValue("@placeOfBirth", placeOfBirth);
-                        cmd.Parameters.AddWithValue("@major", major);
-                        int efectedRow = cmd.ExecuteNonQuery();
-                        isUpdated = efectedRow > 0;
-                    }
+                        cmd.Parameters.AddWithValue("@PlaceOfBirth", placeOfBirth);
+                        cmd.Parameters.AddWithValue("@Major", major);
 
+                        int affectedRows = cmd.ExecuteNonQuery();
+                        isUpdated = affectedRows > 0;
+                    }
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Error: " + ex.Message);
                 }
                 return isUpdated;
-
             }
         }
 
-
-
-
+        private static string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
     }
 }

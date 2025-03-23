@@ -101,5 +101,11 @@
   <ItemGroup>
     <None Include="Resources\icons8-search-50.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\University_Bussiness\University_Bussiness.csproj">
+      <Project>{83a61ee1-59f7-4ec5-ae14-afd0dedd5909}</Project>
+      <Name>University_Bussiness</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
