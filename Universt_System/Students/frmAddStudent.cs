@@ -81,5 +81,10 @@ namespace Universt_System.Students
 
             return true;
         }
+
+        private void frmAddStudent_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SearchTxt = new System.Windows.Forms.TextBox();
+            this.SearchStudentNumberTxt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.Add = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
             this.majorTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.programTxt = new System.Windows.Forms.TextBox();
+            this.TxtPlaceOfBirth = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.emailTxt = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.nameTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,14 +45,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // SearchTxt
+            // SearchStudentNumberTxt
             // 
-            this.SearchTxt.Location = new System.Drawing.Point(329, 69);
-            this.SearchTxt.Margin = new System.Windows.Forms.Padding(500);
-            this.SearchTxt.Multiline = true;
-            this.SearchTxt.Name = "SearchTxt";
-            this.SearchTxt.Size = new System.Drawing.Size(180, 30);
-            this.SearchTxt.TabIndex = 52;
+            this.SearchStudentNumberTxt.Location = new System.Drawing.Point(329, 69);
+            this.SearchStudentNumberTxt.Margin = new System.Windows.Forms.Padding(500);
+            this.SearchStudentNumberTxt.Multiline = true;
+            this.SearchStudentNumberTxt.Name = "SearchStudentNumberTxt";
+            this.SearchStudentNumberTxt.Size = new System.Drawing.Size(180, 30);
+            this.SearchStudentNumberTxt.TabIndex = 52;
             // 
             // label7
             // 
@@ -77,22 +75,24 @@
             this.label8.TabIndex = 49;
             this.label8.Text = "Update Student Info";
             // 
-            // Add
+            // updateBtn
             // 
-            this.Add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.Add.Location = new System.Drawing.Point(230, 337);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(104, 35);
-            this.Add.TabIndex = 48;
-            this.Add.Text = "Update";
-            this.Add.UseVisualStyleBackColor = false;
+            this.updateBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.updateBtn.Location = new System.Drawing.Point(230, 337);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(104, 35);
+            this.updateBtn.TabIndex = 48;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = false;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
             // majorTxt
             // 
-            this.majorTxt.Location = new System.Drawing.Point(526, 195);
+            this.majorTxt.Location = new System.Drawing.Point(505, 150);
             this.majorTxt.Margin = new System.Windows.Forms.Padding(500);
             this.majorTxt.Multiline = true;
             this.majorTxt.Name = "majorTxt";
+            this.majorTxt.ReadOnly = true;
             this.majorTxt.Size = new System.Drawing.Size(180, 30);
             this.majorTxt.TabIndex = 45;
             // 
@@ -100,27 +100,27 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(381, 198);
+            this.label5.Location = new System.Drawing.Point(428, 153);
             this.label5.Margin = new System.Windows.Forms.Padding(500);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
             this.label5.TabIndex = 44;
             this.label5.Text = "Major";
             // 
-            // programTxt
+            // TxtPlaceOfBirth
             // 
-            this.programTxt.Location = new System.Drawing.Point(526, 156);
-            this.programTxt.Margin = new System.Windows.Forms.Padding(500);
-            this.programTxt.Multiline = true;
-            this.programTxt.Name = "programTxt";
-            this.programTxt.Size = new System.Drawing.Size(180, 30);
-            this.programTxt.TabIndex = 43;
+            this.TxtPlaceOfBirth.Location = new System.Drawing.Point(154, 188);
+            this.TxtPlaceOfBirth.Margin = new System.Windows.Forms.Padding(500);
+            this.TxtPlaceOfBirth.Multiline = true;
+            this.TxtPlaceOfBirth.Name = "TxtPlaceOfBirth";
+            this.TxtPlaceOfBirth.Size = new System.Drawing.Size(180, 30);
+            this.TxtPlaceOfBirth.TabIndex = 43;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(383, 159);
+            this.label4.Location = new System.Drawing.Point(11, 191);
             this.label4.Margin = new System.Windows.Forms.Padding(500);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(132, 20);
@@ -129,7 +129,7 @@
             // 
             // passwordTxt
             // 
-            this.passwordTxt.Location = new System.Drawing.Point(143, 229);
+            this.passwordTxt.Location = new System.Drawing.Point(154, 230);
             this.passwordTxt.Margin = new System.Windows.Forms.Padding(500);
             this.passwordTxt.Multiline = true;
             this.passwordTxt.Name = "passwordTxt";
@@ -140,36 +140,16 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(7, 232);
+            this.label3.Location = new System.Drawing.Point(11, 232);
             this.label3.Margin = new System.Windows.Forms.Padding(500);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 40;
             this.label3.Text = "Password";
             // 
-            // emailTxt
-            // 
-            this.emailTxt.Location = new System.Drawing.Point(143, 189);
-            this.emailTxt.Margin = new System.Windows.Forms.Padding(500);
-            this.emailTxt.Multiline = true;
-            this.emailTxt.Name = "emailTxt";
-            this.emailTxt.Size = new System.Drawing.Size(180, 30);
-            this.emailTxt.TabIndex = 39;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 193);
-            this.label1.Margin = new System.Windows.Forms.Padding(500);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 20);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Student ID";
-            // 
             // nameTxt
             // 
-            this.nameTxt.Location = new System.Drawing.Point(143, 150);
+            this.nameTxt.Location = new System.Drawing.Point(154, 150);
             this.nameTxt.Margin = new System.Windows.Forms.Padding(500);
             this.nameTxt.Multiline = true;
             this.nameTxt.Name = "nameTxt";
@@ -180,7 +160,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(7, 154);
+            this.label2.Location = new System.Drawing.Point(11, 150);
             this.label2.Margin = new System.Windows.Forms.Padding(500);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 20);
@@ -196,6 +176,7 @@
             this.button1.Size = new System.Drawing.Size(36, 30);
             this.button1.TabIndex = 53;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -214,19 +195,17 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.SearchTxt);
+            this.Controls.Add(this.SearchStudentNumberTxt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.Add);
+            this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.majorTxt);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.programTxt);
+            this.Controls.Add(this.TxtPlaceOfBirth);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.emailTxt);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.nameTxt);
             this.Controls.Add(this.label2);
             this.Name = "frmUpdateStudent";
@@ -240,19 +219,17 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox SearchTxt;
+        private System.Windows.Forms.TextBox SearchStudentNumberTxt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.TextBox majorTxt;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox programTxt;
+        private System.Windows.Forms.TextBox TxtPlaceOfBirth;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox emailTxt;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nameTxt;
         private System.Windows.Forms.Label label2;
     }
