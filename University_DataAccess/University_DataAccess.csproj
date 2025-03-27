@@ -99,6 +99,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsStudentData.cs" />
+    <Compile Include="clsTeacherData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
