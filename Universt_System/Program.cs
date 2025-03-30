@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Universt_System.Students;
+using Universt_System.Teachers;
 
 namespace Universt_System
 {
@@ -17,7 +17,7 @@ namespace Universt_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUpdateStudent());
+            Application.Run(new frmAddUpdateTeacher());
         }
     }
 }

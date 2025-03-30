@@ -108,6 +108,43 @@ namespace University_DataAccess
             return isFound;
         }
 
+
+        public static bool FindStudentByName(ref string name, ref string studentNumber, ref string placeOfBirth, ref string major)
+        {
+            string query = "SELECT name, student_number, place_of_birth, major FROM student WHERE LOWER(name) LIKE LOWER(@Name)";
+            bool isFound = false;
+
+            using (MySqlConnection conn = new MySqlConnection(cs))
+            {
+                try
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Name", $"%{name}%");
+
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                isFound = true;
+                                name = reader["name"].ToString();
+                                studentNumber = reader["student_number"].ToString();
+                                placeOfBirth = reader["place_of_birth"].ToString();
+                                major = reader["major"].ToString();
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+            return isFound;
+        }
+    
+
      
         public static bool UpdateStudent(string name, string studentNumber, string password, string placeOfBirth)
         {

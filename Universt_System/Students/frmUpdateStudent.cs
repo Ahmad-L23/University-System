@@ -30,9 +30,9 @@ namespace Universt_System.Students
                 return;
             }
 
-            bool isFound = _stduent.FindStudentByID(studentID);
+             _stduent = clsStudent.FindStudentByID(studentID);
 
-            if (isFound)
+            if (_stduent != null)
             {
                 nameTxt.Text = _stduent.Name;
                 TxtPlaceOfBirth.Text = _stduent.PlaceOfBirth;

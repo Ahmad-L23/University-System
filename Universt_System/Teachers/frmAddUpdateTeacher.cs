@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using University_Bussiness;
+using static University_Bussiness.clsTeacher;
 
 namespace Universt_System.Teachers
 {
@@ -12,15 +13,18 @@ namespace Universt_System.Teachers
         {
             InitializeComponent();
             _teacher = new clsTeacher();
-            this.Text = "Add Teacher";
+            lblFormTitle.Text = "Add New Teacher"; // Set label text for Add mode
             chkEditPassword.Visible = false;
+            txtPassword.Enabled = true;
+            txtTeacherNumber.Visible = false;
+            lblTeacherNumber.Visible = false;
         }
 
         public frmAddUpdateTeacher(string teacherNumber)
         {
             InitializeComponent();
             _teacher = new clsTeacher();
-            this.Text = "Update Teacher";
+            lblFormTitle.Text = "Update Teacher Info"; // Set label text for Update mode
 
             if (_teacher.FindTeacherByTeacherNumber(teacherNumber))
             {
@@ -39,6 +43,7 @@ namespace Universt_System.Teachers
             txtDepartment.Text = _teacher.Department;
             txtSalary.Text = _teacher.Salary.ToString();
 
+            
             txtPassword.Visible = false;
             chkEditPassword.Visible = true;
         }
@@ -55,20 +60,24 @@ namespace Universt_System.Teachers
             _teacher.Name = txtName.Text;
             _teacher.Department = txtDepartment.Text;
             _teacher.Salary = int.Parse(txtSalary.Text);
+            
 
+            // Handle password if checkbox is checked
             if (chkEditPassword.Checked && !string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 _teacher.Password = txtPassword.Text;
             }
 
+            
+
             if (_teacher.ExecuteOperation())
             {
-                MessageBox.Show("Operation successful.");
+                MessageBox.Show("Saved successfully.");
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Operation failed.");
+                MessageBox.Show("Save failed.");
             }
         }
 
@@ -106,6 +115,22 @@ namespace Universt_System.Teachers
             }
 
             return true;
+        }
+
+        private void frmAddUpdateTeacher_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void SetTeacherPermissions(int permissions)
+        {
+            _teacher.Permissions = permissions;
+        }
+
+        private void btnPermissions_Click(object sender, EventArgs e)
+        {
+            frmSetTeacherPermissions permissionForm = new frmSetTeacherPermissions(this);
+            permissionForm.ShowDialog();
         }
     }
 }

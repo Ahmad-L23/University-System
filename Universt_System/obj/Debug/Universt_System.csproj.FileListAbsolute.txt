@@ -45,3 +45,5 @@ C:\OOP_Projects\windows form projects\Universt_System\Universt_System\bin\Debug\
 C:\OOP_Projects\windows form projects\Universt_System\Universt_System\bin\Debug\K4os.Hash.xxHash.xml
 C:\OOP_Projects\windows form projects\Universt_System\Universt_System\bin\Debug\System.Numerics.Vectors.xml
 C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt.8D46EBD1.Up2Date
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.Teachers.frmAddUpdateTeacher.resources
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.Teachers.frmSetTeacherPermissions.resources
