@@ -20,7 +20,7 @@ namespace University_Bussiness
         public string Name { get; set; }
         public string TeacherNumber { get; set; }
         public string Password { get; set; }
-        public string Department { get; set; }
+        public string Department {  get; set; }
         public int Salary { get; set; }
         public int Permissions { get; set; }
 

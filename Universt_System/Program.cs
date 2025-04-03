@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Universt_System.Teachers;
-
+using Universt_System.departments;
 namespace Universt_System
 {
     internal static class Program
@@ -17,7 +17,7 @@ namespace Universt_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdateTeacher());
+            Application.Run(new frmUpdateDeleteDepartment());
         }
     }
 }

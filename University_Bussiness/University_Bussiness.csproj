@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="clsCategorie.cs" />
+    <Compile Include="clsDepartments.cs" />
     <Compile Include="clsStudent.cs" />
     <Compile Include="clsTeacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

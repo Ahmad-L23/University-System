@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="departments\frmAddDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="departments\frmAddDepartment.Designer.cs">
+      <DependentUpon>frmAddDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="departments\frmUpdateDeleteDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="departments\frmUpdateDeleteDepartment.Designer.cs">
+      <DependentUpon>frmUpdateDeleteDepartment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +90,12 @@
     <Compile Include="Teachers\frmSetTeacherPermissions.Designer.cs">
       <DependentUpon>frmSetTeacherPermissions.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="departments\frmAddDepartment.resx">
+      <DependentUpon>frmAddDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="departments\frmUpdateDeleteDepartment.resx">
+      <DependentUpon>frmUpdateDeleteDepartment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
