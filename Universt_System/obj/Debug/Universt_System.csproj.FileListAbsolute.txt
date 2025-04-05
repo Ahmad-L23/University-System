@@ -49,3 +49,6 @@ C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\
 C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.Teachers.frmSetTeacherPermissions.resources
 C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.departments.frmAddDepartment.resources
 C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.departments.frmUpdateDeleteDepartment.resources
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.categories.frmAddCategory.resources
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.categories.frmUpdateCategory.resources
+C:\OOP_Projects\windows form projects\Universt_System\Universt_System\obj\Debug\Universt_System.categories.frmDeleteCategory.resources

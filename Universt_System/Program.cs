@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Universt_System.Teachers;
 using Universt_System.departments;
+using Universt_System.categories;
+
 namespace Universt_System
 {
     internal static class Program
@@ -17,7 +19,7 @@ namespace Universt_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUpdateDeleteDepartment());
+            Application.Run(new frmDeleteCategory());
         }
     }
 }
