@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Universt_System.Teachers;
 using Universt_System.departments;
 using Universt_System.categories;
+using Universt_System.majors;
 
 namespace Universt_System
 {
@@ -19,7 +20,7 @@ namespace Universt_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDeleteCategory());
+            Application.Run(new frmAddUpdateMajor());
         }
     }
 }

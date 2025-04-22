@@ -100,6 +100,7 @@
     <Compile Include="clsCategorieData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsDepartmentData.cs" />
+    <Compile Include="clsMajorData.cs" />
     <Compile Include="clsStudentData.cs" />
     <Compile Include="clsTeacherData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

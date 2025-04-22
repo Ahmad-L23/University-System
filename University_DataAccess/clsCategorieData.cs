@@ -83,7 +83,7 @@ namespace University_DataAccess
                 }
                 catch (Exception ex)
                 {
-                    // Log or handle exception
+                    
                     return false;
                 }
             }
@@ -106,7 +106,7 @@ namespace University_DataAccess
                 }
                 catch (Exception ex)
                 {
-                    // Log or handle exception
+                    
                     return false;
                 }
             }
@@ -173,7 +173,7 @@ namespace University_DataAccess
                 }
                 catch (Exception ex)
                 {
-                    // Log or handle exception
+                    
                 }
             }
 

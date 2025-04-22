@@ -59,7 +59,7 @@ namespace University_DataAccess
                 string query = "SELECT * FROM Department WHERE `name` LIKE @SearchName";
                 using (MySqlDataAdapter adapter = new MySqlDataAdapter(query, conn))
                 {
-                    adapter.SelectCommand.Parameters.AddWithValue("@SearchName", searchName + "%"); // Ensures search starts with input
+                    adapter.SelectCommand.Parameters.AddWithValue("@SearchName", searchName + "%"); 
                     DataTable resultTable = new DataTable();
                     adapter.Fill(resultTable);
                     return resultTable;
