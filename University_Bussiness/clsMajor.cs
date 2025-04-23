@@ -10,8 +10,8 @@ namespace University_Bussiness
 {
     public class clsMajor
     {
-        private string name;
-        private int departmentID;
+        public string name;
+        public int departmentID;
 
         public clsMajor()
         {
@@ -32,5 +32,21 @@ namespace University_Bussiness
            
         }
 
+        public static bool MajorExist(string name)
+        {
+            name = name.ToLower();
+            return clsMajorData.isMajorExist(name);
+        }
+
+        public static int findMajorID(string name)
+        {
+            name = name.ToLower();
+            return clsMajorData.findMajorIDByName(name);
+        }
+
+        public static bool updateMajor(int id, string newMajorName)
+        {
+            return clsMajorData.updateMajor(id, newMajorName);
+        }
     }
 }

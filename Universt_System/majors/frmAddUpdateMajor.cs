@@ -9,20 +9,54 @@ namespace Universt_System.majors
     public partial class frmAddUpdateMajor : Form
     {
         private int _selectedFacultyId = -1;
+        private int _majorID = -1; // Store the major ID if updating
         private TextBox txtMajorName;
+        private TextBox txtNewMajorName;
         private ComboBox cmbFaculty;
+        private Label lblOldMajorName;
+        private Button btnSave;
+        private Button btnUpdate;
 
+        // Non-parameterized constructor for adding a new major
         public frmAddUpdateMajor()
         {
             InitializeComponent();
             this.Size = new Size(400, 250);
-            this.BackColor = Color.FromArgb(240, 248, 255); // Light background (AliceBlue)
+            this.BackColor = Color.FromArgb(240, 248, 255);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Text = "Add or Update Major";
+            this.Text = "Add Major";
+
+            // Call the Add() method to set up the form for adding a major
             Add();
         }
 
+        // Parameterized constructor for updating an existing major
+        public frmAddUpdateMajor(string existingMajorName)
+        {
+            InitializeComponent();
+            this.Size = new Size(400, 350);
+            this.BackColor = Color.FromArgb(240, 248, 255);
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Text = "Update Major";
+
+            // Check if the major exists before continuing
+            if (string.IsNullOrEmpty(existingMajorName) || !clsMajor.MajorExist(existingMajorName))
+            {
+                MessageBox.Show("Major name does not exist or invalid input.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Close();
+                return;
+            }
+
+            existingMajorName = existingMajorName.ToLower();
+            _majorID = findMajorID(existingMajorName);
+
+            // Set up UI for updating the major
+            SetupUpdateUI(existingMajorName);
+        }
+
+        // Setup form controls for adding a new major
         private void Add()
         {
             Label lblMajorName = new Label();
@@ -73,7 +107,7 @@ namespace Universt_System.majors
                 }
             };
 
-            Button btnSave = new Button();
+            btnSave = new Button();
             btnSave.Text = "Save Major";
             btnSave.Location = new Point(150, 130);
             btnSave.Width = 200;
@@ -86,6 +120,40 @@ namespace Universt_System.majors
             this.Controls.Add(btnSave);
         }
 
+        // Setup form controls for updating an existing major
+        private void SetupUpdateUI(string existingMajorName)
+        {
+            lblOldMajorName = new Label();
+            lblOldMajorName.Text = $"Old Major Name: {existingMajorName}";
+            lblOldMajorName.Location = new Point(30, 30);
+            lblOldMajorName.AutoSize = true;
+            lblOldMajorName.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            lblOldMajorName.ForeColor = Color.MidnightBlue;
+            this.Controls.Add(lblOldMajorName);
+
+            txtNewMajorName = new TextBox();
+            txtNewMajorName.Name = "txtNewMajorName";
+            txtNewMajorName.Location = new Point(150, 70);
+            txtNewMajorName.Width = 200;
+            txtNewMajorName.Font = new Font("Segoe UI", 10);
+            txtNewMajorName.BackColor = Color.White;
+            txtNewMajorName.ForeColor = Color.Black;
+            this.Controls.Add(txtNewMajorName);
+
+            btnUpdate = new Button();
+            btnUpdate.Text = "Update Major";
+            btnUpdate.Location = new Point(150, 120);
+            btnUpdate.Width = 200;
+            btnUpdate.Height = 35;
+            btnUpdate.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+            btnUpdate.BackColor = Color.DarkGreen;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.Click += BtnUpdate_Click;
+            this.Controls.Add(btnUpdate);
+        }
+
+        // Handle saving the new major
         private void BtnSave_Click(object sender, EventArgs e)
         {
             string majorName = txtMajorName.Text.Trim();
@@ -93,6 +161,12 @@ namespace Universt_System.majors
             if (string.IsNullOrEmpty(majorName))
             {
                 MessageBox.Show("Please enter a Major Name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (clsMajor.MajorExist(majorName))
+            {
+                MessageBox.Show("Please enter another major name, major name already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -113,9 +187,47 @@ namespace Universt_System.majors
             }
         }
 
+        // Handle updating the existing major
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show(
+                "Are you sure you want to update this major name?",
+                "Confirm Update",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                string newMajorName = txtNewMajorName.Text.Trim();
+
+                if (string.IsNullOrEmpty(newMajorName))
+                {
+                    MessageBox.Show("Please enter a new Major Name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                
+                if(clsMajor.updateMajor(_majorID, newMajorName))
+                    MessageBox.Show("Major name updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                {
+                    MessageBox.Show("something went wrong while updating try again, pleas!");
+                }
+                // Optionally close the form
+                this.Close();
+            }
+        }
+
         public static List<Tuple<int, string>> GetAllDepartments()
         {
             return clsDepartments.GetAllDepartments();
+        }
+
+        public int findMajorID(string name)
+        {
+            name = name.ToLower();
+            return clsMajor.findMajorID(name);
         }
     }
 }

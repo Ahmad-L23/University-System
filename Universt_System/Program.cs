@@ -20,7 +20,7 @@ namespace Universt_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdateMajor());
+            Application.Run(new frmAddUpdateMajor("computer"));
         }
     }
 }
