@@ -50,7 +50,7 @@ namespace Universt_System.majors
             }
 
             existingMajorName = existingMajorName.ToLower();
-            _majorID = findMajorID(existingMajorName);
+            _majorID = clsMajor.FindMajorID(existingMajorName);
 
             // Set up UI for updating the major
             SetupUpdateUI(existingMajorName);
@@ -166,7 +166,7 @@ namespace Universt_System.majors
 
             if (clsMajor.MajorExist(majorName))
             {
-                MessageBox.Show("Please enter another major name, major name already exists.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Major name already exists. Please enter another name.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -176,8 +176,10 @@ namespace Universt_System.majors
                 return;
             }
 
-            clsMajor major = new clsMajor(majorName, _selectedFacultyId);
-            if (major.addMajor())
+            clsMajor major = new clsMajor(null, majorName, _selectedFacultyId);
+            major.Mode = clsMajor.enMode.AddNew;
+
+            if (major.Save())
             {
                 MessageBox.Show($"Major Name: {majorName}\nFaculty ID: {_selectedFacultyId}", "Major Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -207,13 +209,18 @@ namespace Universt_System.majors
                     return;
                 }
 
-                
-                if(clsMajor.updateMajor(_majorID, newMajorName))
+                clsMajor major = new clsMajor(_majorID, newMajorName, _selectedFacultyId);
+                major.Mode = clsMajor.enMode.Update;
+
+                if (major.Save())
+                {
                     MessageBox.Show("Major name updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                 {
-                    MessageBox.Show("something went wrong while updating try again, pleas!");
+                    MessageBox.Show("Something went wrong while updating. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
                 // Optionally close the form
                 this.Close();
             }
@@ -222,12 +229,6 @@ namespace Universt_System.majors
         public static List<Tuple<int, string>> GetAllDepartments()
         {
             return clsDepartments.GetAllDepartments();
-        }
-
-        public int findMajorID(string name)
-        {
-            name = name.ToLower();
-            return clsMajor.findMajorID(name);
         }
     }
 }
