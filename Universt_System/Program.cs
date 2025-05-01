@@ -7,6 +7,8 @@ using Universt_System.Teachers;
 using Universt_System.departments;
 using Universt_System.categories;
 using Universt_System.majors;
+using University_System.courses;
+using University_System;
 
 namespace Universt_System
 {
@@ -20,7 +22,7 @@ namespace Universt_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmAddUpdateMajor("computer"));
+            Application.Run(new frmAddUpdateCourseSection(2));
         }
     }
 }

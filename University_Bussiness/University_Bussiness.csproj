@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="clsCategorie.cs" />
+    <Compile Include="clsCourse.cs" />
+    <Compile Include="clsCourseSection.cs" />
     <Compile Include="clsDepartments.cs" />
     <Compile Include="clsMajor.cs" />
     <Compile Include="clsStudent.cs" />

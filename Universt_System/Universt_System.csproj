@@ -64,6 +64,24 @@
     <Compile Include="categories\frmUpdateCategory.Designer.cs">
       <DependentUpon>frmUpdateCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="coursesSections\frmAddUpdateCourseSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="coursesSections\frmAddUpdateCourseSection.Designer.cs">
+      <DependentUpon>frmAddUpdateCourseSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="courses\frmAddUpdateCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="courses\frmAddUpdateCourse.Designer.cs">
+      <DependentUpon>frmAddUpdateCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="courses\frmDeleteCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="courses\frmDeleteCourse.Designer.cs">
+      <DependentUpon>frmDeleteCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="departments\frmAddDepartment.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using University_DataAccess;
 
 namespace University_Bussiness
@@ -82,6 +83,14 @@ namespace University_Bussiness
                 return true;
             }
             return false;
+        }
+
+
+        // BLL method to get all teachers (with Teacher ID)
+        public static DataTable GetAllTeachers()
+        {
+            // Get teachers from DAL
+            return clsTeacherData.GetAllTeachers();
         }
     }
 }

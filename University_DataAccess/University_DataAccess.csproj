@@ -98,6 +98,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="clsCategorieData.cs" />
+    <Compile Include="clsCourseData.cs" />
+    <Compile Include="clsCourseSectionData.cs" />
     <Compile Include="clsDataAccessSettings.cs" />
     <Compile Include="clsDepartmentData.cs" />
     <Compile Include="clsMajorData.cs" />

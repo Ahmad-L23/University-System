@@ -1,6 +1,7 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
 using BCrypt.Net;
+using System.Data;
 
 namespace University_DataAccess
 {
@@ -161,5 +162,39 @@ namespace University_DataAccess
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
         }
+
+
+
+
+        public static DataTable GetAllTeachers()
+        {
+            // Query to get only the teacher ID and name
+            string query = "SELECT teacher_id, name FROM teacher";
+
+            DataTable dtTeachers = new DataTable();
+
+            using (MySqlConnection conn = new MySqlConnection(cs))
+            {
+                try
+                {
+                    conn.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                        {
+                            adapter.Fill(dtTeachers);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+
+            return dtTeachers;
+        }
+
+
     }
 }
