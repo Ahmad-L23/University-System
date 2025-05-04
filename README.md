@@ -1,7 +1,7 @@
 # University Management System
 The University Management System is a desktop WinForms application developed to streamline the academic and administrative processes within a university or college environment. It is designed using C# and the .NET Framework, with ADO.NET as the data access technology and MySQL as the backend database. The system provides a robust and user-friendly interface through Windows Forms (WinForms), enabling efficient management of students, teachers, courses, departments, majors, and course sections.
 
-##Key Features
+##Key Features:
 ###👨‍🎓 Student Management
 - Add and manage student profiles with details such as name, age, and gender.
 
@@ -37,7 +37,7 @@ Support course classification under custom-defined categories for better organiz
 
 - Track and update course section data in real-time.
 
-## Technology Used
+## Technology Used:
 Component	Technology
 **-Programming Language:	C#
 - Framework:	.NET Framework (WinForms)
@@ -46,7 +46,7 @@ Component	Technology
 - IDE:	Visual Studio
 - Architecture:	Three-Tier Architecture(Presentation Layer → Business Logic Layer → Data Access Layer)
 
-# Application Highlights
+##Application Highlights:
 - Modular Design: Separates logic into PL, BLL, and DAL layers for cleaner code and easier maintenance.
 
 - Database-Driven: Uses MySQL for fast, reliable, and scalable data storage.
