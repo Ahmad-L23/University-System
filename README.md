@@ -2,35 +2,35 @@
 The University Management System is a desktop WinForms application developed to streamline the academic and administrative processes within a university or college environment. It is designed using C# and the .NET Framework, with ADO.NET as the data access technology and MySQL as the backend database. The system provides a robust and user-friendly interface through Windows Forms (WinForms), enabling efficient management of students, teachers, courses, departments, majors, and course sections.
 
 ## Key Features:
-### 👨‍🎓 Student Management
+#### 👨‍🎓 Student Management
 - Add and manage student profiles with details such as name, age, and gender.
 
 - Maintain academic records, view enrolled course sections, and handle student updates or deletions.
 
 - Provide real-time access to student data for administrative use.
 
-### 👨‍🏫 Teacher Management
+#### 👨‍🏫 Teacher Management
 - Manage teacher profiles with personal information and assigned teaching responsibilities.
 
 - Associate teachers with relevant departments and course sections.
 
 - Update and maintain teacher records easily via a dedicated interface.
 
-### 📚 Course and Category Management
+#### 📚 Course and Category Management
 Add and categorize courses based on subject area, course type, or academic level.
 
 Manage course information including title, credit hours, category, and prerequisites.
 
 Support course classification under custom-defined categories for better organization.
 
-### 🏫 Department and Major Management
+#### 🏫 Department and Major Management
 - Organize academic majors under respective departments.
 
 - Manage department listings (e.g., IT, Business, Sciences) with assigned majors.
 
 - Handle creation, updating, and deletion of departments and major records.
 
-### 🧾 Course Section Management
+#### 🧾 Course Section Management
 - Schedule course sections with details such as course, teacher, and semester.
 
 - Assign students to sections and monitor class capacity and availability.
