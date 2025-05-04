@@ -3,18 +3,18 @@ The University Management System is a desktop WinForms application developed to 
 
 ##Key Features
 ###👨‍🎓 Student Management
-- **Add and manage student profiles with details such as name, age, and gender.
+- Add and manage student profiles with details such as name, age, and gender.
 
-- **Maintain academic records, view enrolled course sections, and handle student updates or deletions.
+- Maintain academic records, view enrolled course sections, and handle student updates or deletions.
 
-- **Provide real-time access to student data for administrative use.
+- Provide real-time access to student data for administrative use.
 
 ###👨‍🏫 Teacher Management
-- **Manage teacher profiles with personal information and assigned teaching responsibilities.
+- Manage teacher profiles with personal information and assigned teaching responsibilities.
 
-- **Associate teachers with relevant departments and course sections.
+- Associate teachers with relevant departments and course sections.
 
-- **Update and maintain teacher records easily via a dedicated interface.
+- Update and maintain teacher records easily via a dedicated interface.
 
 ###📚 Course and Category Management
 Add and categorize courses based on subject area, course type, or academic level.
@@ -24,32 +24,32 @@ Manage course information including title, credit hours, category, and prerequis
 Support course classification under custom-defined categories for better organization.
 
 ###🏫 Department and Major Management
-- **Organize academic majors under respective departments.
+- Organize academic majors under respective departments.
 
-- **Manage department listings (e.g., IT, Business, Sciences) with assigned majors.
+- Manage department listings (e.g., IT, Business, Sciences) with assigned majors.
 
-- **Handle creation, updating, and deletion of departments and major records.
+- Handle creation, updating, and deletion of departments and major records.
 
 ###🧾 Course Section Management
-- **Schedule course sections with details such as course, teacher, and semester.
+- Schedule course sections with details such as course, teacher, and semester.
 
-- **Assign students to sections and monitor class capacity and availability.
+- Assign students to sections and monitor class capacity and availability.
 
-- **Track and update course section data in real-time.
+- Track and update course section data in real-time.
 
 # Technology Used
 Component	Technology
 **-Programming Language:	C#
-- **Framework:	.NET Framework (WinForms)
-- **Database:	MySQL
-- **Data Access:	ADO.NET
-- **IDE:	Visual Studio
-- **Architecture:	Three-Tier Architecture(Presentation Layer → Business Logic Layer → Data Access Layer)
+- Framework:	.NET Framework (WinForms)
+- Database:	MySQL
+- Data Access:	ADO.NET
+- IDE:	Visual Studio
+- Architecture:	Three-Tier Architecture(Presentation Layer → Business Logic Layer → Data Access Layer)
 
 # Application Highlights
-- **Modular Design: Separates logic into PL, BLL, and DAL layers for cleaner code and easier maintenance.
+- Modular Design: Separates logic into PL, BLL, and DAL layers for cleaner code and easier maintenance.
 
-- **Database-Driven: Uses MySQL for fast, reliable, and scalable data storage.
+- Database-Driven: Uses MySQL for fast, reliable, and scalable data storage.
 
 - **WinForms UI: Provides a rich and responsive desktop experience for end users.
 
