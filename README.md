@@ -37,7 +37,7 @@ Support course classification under custom-defined categories for better organiz
 
 - Track and update course section data in real-time.
 
-# Technology Used
+## Technology Used
 Component	Technology
 **-Programming Language:	C#
 - Framework:	.NET Framework (WinForms)
