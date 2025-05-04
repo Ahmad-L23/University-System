@@ -44,7 +44,7 @@ Component	Technology
 - Database:	MySQL
 - Data Access:	ADO.NET
 - IDE:	Visual Studio
-- Architecture:	Three-Tier Architecture(Presentation Layer → Business Logic Layer → Data Access Layer)
+- Architecture:	Three-Tier Architecture (Presentation Layer → Business Logic Layer → Data Access Layer)
 
 ## Application Highlights:
 - Modular Design: Separates logic into PL, BLL, and DAL layers for cleaner code and easier maintenance.
