@@ -23,7 +23,7 @@ Manage course information including title, credit hours, category, and prerequis
 
 Support course classification under custom-defined categories for better organization.
 
-###🏫 Department and Major Management
+### 🏫 Department and Major Management
 - Organize academic majors under respective departments.
 
 - Manage department listings (e.g., IT, Business, Sciences) with assigned majors.
